@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ManchesterUnited/static/css/main.a94d6813.chunk.css",
+    "main.js": "/ManchesterUnited/static/js/main.97d07684.chunk.js",
+    "main.js.map": "/ManchesterUnited/static/js/main.97d07684.chunk.js.map",
+    "runtime-main.js": "/ManchesterUnited/static/js/runtime-main.320121f7.js",
+    "runtime-main.js.map": "/ManchesterUnited/static/js/runtime-main.320121f7.js.map",
+    "static/css/2.90010208.chunk.css": "/ManchesterUnited/static/css/2.90010208.chunk.css",
+    "static/js/2.bc66f714.chunk.js": "/ManchesterUnited/static/js/2.bc66f714.chunk.js",
+    "static/js/2.bc66f714.chunk.js.map": "/ManchesterUnited/static/js/2.bc66f714.chunk.js.map",
+    "index.html": "/ManchesterUnited/index.html",
+    "precache-manifest.268c9b6a801a8b5028cb11898404176d.js": "/ManchesterUnited/precache-manifest.268c9b6a801a8b5028cb11898404176d.js",
+    "service-worker.js": "/ManchesterUnited/service-worker.js",
+    "static/css/2.90010208.chunk.css.map": "/ManchesterUnited/static/css/2.90010208.chunk.css.map",
+    "static/css/main.a94d6813.chunk.css.map": "/ManchesterUnited/static/css/main.a94d6813.chunk.css.map",
+    "static/media/semantic.min.css": "/ManchesterUnited/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.320121f7.js",
+    "static/css/2.90010208.chunk.css",
+    "static/js/2.bc66f714.chunk.js",
+    "static/css/main.a94d6813.chunk.css",
+    "static/js/main.97d07684.chunk.js"
+  ]
+}
