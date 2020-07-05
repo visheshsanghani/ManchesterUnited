@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import moment from 'moment-timezone';
-
-// import { internal_data } from './internal_data';
 import Heading from './Heading';
 import Countdown from './countdown';
 import Loading from './Loader';
@@ -21,31 +19,11 @@ class MainView extends React.Component {
 
 
     t_convert(params) {
-        console.log("conversion", moment.tz(params, "Asia/Kolkata").format("MM DD YYYY, h:mm a"));
+        // console.log("conversion", moment.tz(params, "Asia/Kolkata").format("MM DD YYYY, h:mm a"));
         return moment.tz(params, "Asia/Kolkata").format("MM DD YYYY, h:mm a");
     }
 
     async logging() {
-        // const short = internal_data;
-        // // console.log(data);
-
-        // // const short = data.data.api.fixtures;
-        // for (let i = 415; i < short.length; i++) {
-        //     const m_date = short[i].event_date.split('T')[0];
-        //     if (moment(m_date).isSameOrAfter(moment().format("YYYY-MM-DD"))) {
-        //         console.log(short[i]);
-
-        //         this.setState({
-        //             current_fixture: short[i],
-        //             home_Coach: "Home Coach",
-        //             away_Coach: "Away Coach"
-        //         });
-        //         return;
-        //     }
-        // }
-        // return;
-
-
         const data = await axios.get("https://api-football-v1.p.rapidapi.com/v2/fixtures/team/33", {
             "method": "GET",
             "headers": {
@@ -56,7 +34,6 @@ class MainView extends React.Component {
         const short = data.data.api.fixtures;
         for (let i = 415; i < short.length; i++) {
             const m_date = short[i].event_date.split('T')[0];
-            // console.log((moment().format("YYYY-MM-DD")).isSameOrBefore(moment(m_date)));
 
             if (moment(m_date).isSameOrAfter(moment().format("YYYY-MM-DD"))) {
                 let home_Coach = await axios.get(`https://api-football-v1.p.rapidapi.com/v2/coachs/team/${short[i].homeTeam.team_id}`, {
@@ -73,9 +50,12 @@ class MainView extends React.Component {
                         "x-rapidapi-key": "87b140eb05msh461aa1d79520e3ep12982ejsnbdaf7d3dac51"
                     }
                 })
-                home_Coach = home_Coach.data.api.coachs[0].firstname + home_Coach.data.api.coachs[0].lastname
-                away_Coach = away_Coach.data.api.coachs[0].firstname + away_Coach.data.api.coachs[0].lastname
-                this.setState({ current_fixture: short[i], home_Coach: home_Coach, away_Coach: away_Coach });
+                // console.log(home_Coach, away_Coach)
+                if (home_Coach.data.api.coachs[0] && away_Coach.data.api.coachs[0]) {
+                    home_Coach = home_Coach.data.api.coachs[0].firstname + home_Coach.data.api.coachs[0].lastname
+                    away_Coach = away_Coach.data.api.coachs[0].firstname + away_Coach.data.api.coachs[0].lastname
+                    this.setState({ current_fixture: short[i], home_Coach: home_Coach, away_Coach: away_Coach });
+                }
                 return;
             }
         }
@@ -86,11 +66,9 @@ class MainView extends React.Component {
         return (
             <div>
                 {this.state.current_fixture ?
-
                     <div style={{ "position": "absolute" }}>
-
                         <Heading league={this.state.current_fixture.league.name} />
-                        <Segment style={{ "margin": "10px", "marginLeft": "100px", "backgroundColor": "transparent" }} size={'massive'}>
+                        <Segment style={{ "margin": "10px", "backgroundColor": "transparent" }} size={'massive'}>
 
                             <Grid columns={2}>
                                 <Grid.Column>
