@@ -66,7 +66,7 @@ class MainView extends React.Component {
         return (
             <div>
                 {this.state.current_fixture ?
-                    <div style={{ "position": "absolute" }}>
+                    <div style={{ "position": "absolute", marginLeft: 150 }}>
                         <Heading league={this.state.current_fixture.league.name} />
                         <Segment style={{ "margin": "10px", "backgroundColor": "transparent" }} size={'massive'}>
 
@@ -101,9 +101,9 @@ class MainView extends React.Component {
                         </Segment>
 
                         <p className="center_it">
-                            Venue : {this.state.current_fixture.venue}
+                            <p>Venue : {this.state.current_fixture.venue}</p>
+                            <p>Referee : {this.state.current_fixture.referee}</p>
                         </p>
-                        <br />
                         <br />
                         <Countdown timeTillDate={this.t_convert(this.state.current_fixture.event_date)} />
                     </div>

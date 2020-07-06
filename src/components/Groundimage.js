@@ -6,7 +6,7 @@ class Groundimage extends React.Component {
     render() {
         return (
             <div style={{ fontFamily: "Calistoga , cursive" }}>
-                <div className="center_it" style={{ marginTop: 30 }}>
+                <div className="center_it" style={{ marginTop: 10 }}>
                     Manchester United Fixtures <br /><br />
                 </div>
                 <div className="row">

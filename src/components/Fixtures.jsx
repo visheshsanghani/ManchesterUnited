@@ -23,18 +23,20 @@ class Fixtures extends React.Component {
             <div>
                 {fixtures &&
                     <div>
+                        <p style={{ fontFamily: "Calistoga , cursive" , textAlign : "center" }}>Next Fixtures</p>
                         {fixtures.map(element => {
                             return (
-                                <div className="card" style={{ width: "24rem" }}>
+                                <div className="card" style={{ width: "24rem", marginLeft: 10 }}>
                                     <div className="card-body">
                                         <Image src={element.homeTeam.logo}
                                             alt="Home-Team"
                                             avatar />
                                         <span>
-                                            {element.homeTeam.team_name} vs {element.awayTeam.team_name}</span>
+                                            {element.homeTeam.team_name} vs {element.awayTeam.team_name}  </span>
                                         <Image src={element.awayTeam.logo}
                                             alt="Away-Team"
                                             avatar />
+                                        <p style={{ textAlign: "center" }}>{element.league.name}</p>
                                     </div>
                                 </div>
                             )
