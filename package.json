@@ -12,6 +12,7 @@
     "react-fade-in": "^1.1.0",
     "react-loading": "^2.0.3",
     "react-lottie": "^1.2.3",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.2.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.1"

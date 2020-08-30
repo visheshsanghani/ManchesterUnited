@@ -18,9 +18,8 @@ export default class Loading extends React.Component {
         return (
             <div>
                 <FadeIn>
-                    <div class="d-flex justify-content-center align-items-center">
-                        {/* <h1>fetching pizza</h1> */}
-                        <div style = {{"marginTop" : 200}}>
+                    <div className="d-flex justify-content-center align-items-center">
+                        <div style={{ "marginTop": 200 }}>
                             <Lottie options={defaultOptions} height={200} width={200} />
                         </div>
                     </div>
